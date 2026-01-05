@@ -86,5 +86,114 @@ body {
     opacity: 0.8;
 }
 
+dialog {
+    margin: auto;
+    padding: 0;
+    border: none;
+    border-radius: 16px;
+    background: linear-gradient(to bottom, var(--bg-card), #161e2e);
+    color: var(--text-main);
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    padding: 2.5rem;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
+}
+
+.btn-icon {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.btn-icon:hover {
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 0.9rem;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    background-color: rgba(15, 23, 42, 0.6);
+    color: white;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 1rem;
+    cursor: pointer;
+    padding: 0.5rem 0;
+}
+
+.checkbox-group input {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--accent);
+    cursor: pointer;
+}
+
+.btn-submit {
+    background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+    color: white;
+    width: 100%;
+    justify-content: center;
+    margin-top: 2rem;
+    border: none;
+    border-radius: 8px;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.btn-submit:hover {
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+}
+
+
 
 

@@ -13,7 +13,7 @@ Book.prototype.toggleReadStatus = function() {
 };
 
 const libraryContainer = document.getElementById("libraryContainer");
-const emptyState = document.getElementById("emtpyState");
+const emptyState = document.getElementById("emptyState");
 
 const bookDialog = document.getElementById("bookDialog");
 const bookForm = document.getElementById("bookForm");
@@ -46,7 +46,7 @@ function toogleBookRead(id) {
 }
 
 function displayBooks() {
-    libraryContainer.innerHTML = "";
+    libraryContainer.innerHTML = '';
 
     if(myLibrary.length === 0) {
         libraryContainer.appendChild(emptyState);

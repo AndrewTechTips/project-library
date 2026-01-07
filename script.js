@@ -84,6 +84,32 @@ function displayBooks() {
         pages.textContent = `${book.pages} pages`;
 
         pagesEl.append(pagesIcon, pagesText);
-        
-    })
+
+        const actionsDiv = document.createElement("div");
+        actionsDiv.classList.add("card-actions");
+
+        const readBtn = document.createElement("button");
+        readBtn.classList.add("btn-card", "btn-status");
+
+        if(book.isRead) {
+            readBtn.classList.add("read");
+            readBtn.innerHTML = '<span class="mdi mdi-check-circle-outline"></span> Read'; 
+        } else {
+            readBtn.classList.add("not-read");
+            readBtn.innerHTML = '<span class="mdi mdi-checkbox-blank-circle-outline"></span> Not Read';
+        }
+
+        readBtn.addEventListener("click", () => toogleBookRead(book.id));
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.classList.add("btn-card", "btn-delete");
+        deleteBtn.innerHTML = '<span class="mdi mdi-trash-can-outline"></span> Remove';
+
+        deleteBtn.addEventListener("click", () => removeBook(book.id));
+
+        actionsDiv.append(readBtn, deleteBtn);
+        card.append(titleEl, authorEl, pagesEl, actionsDiv);
+
+        libraryContainer.appendChild(card);
+    });
 }

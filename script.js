@@ -36,7 +36,7 @@ function removeBook(id) {
     }
 }
 
-function toogleBookRead(id) {
+function togleBookRead(id) {
     const book = myLibrary.find(book => book.id === id);
 
     if(book) {
@@ -99,7 +99,7 @@ function displayBooks() {
             readBtn.innerHTML = '<span class="mdi mdi-checkbox-blank-circle-outline"></span> Not Read';
         }
 
-        readBtn.addEventListener("click", () => toogleBookRead(book.id));
+        readBtn.addEventListener("click", () => togleBookRead(book.id));
 
         const deleteBtn = document.createElement("button");
         deleteBtn.classList.add("btn-card", "btn-delete");

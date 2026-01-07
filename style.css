@@ -261,8 +261,8 @@ input[type="number"]:focus {
     font-weight: 600;
     font-size: 0.9rem;
     display: flex;
-    align-items: center;
-    justify-items: center;
+    align-content: center;
+    justify-content: center;
     gap: 5px;
 }
 

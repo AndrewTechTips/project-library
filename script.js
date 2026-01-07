@@ -81,7 +81,7 @@ function displayBooks() {
         pagesIcon.className = "mdi mdi-book-open-page-variant-outline";
         
         const pagesText = document.createElement("span");
-        pages.textContent = `${book.pages} pages`;
+        pagesText.textContent = `${book.pages} pages`;
 
         pagesEl.append(pagesIcon, pagesText);
 
@@ -113,3 +113,20 @@ function displayBooks() {
         libraryContainer.appendChild(card);
     });
 }
+
+addBookBtn.addEventListener("click", () => bookDialog.showModal());
+closeDialogBtn.addEventListener("click", () => bookDialog.close());
+
+bookForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const title = document.getElementById("title").value;
+    const author = document.getElementById("author").value;
+    const pages = document.getElementById("pages").value;
+    const isRead = document.getElementById("isRead").checked;
+
+    addBookToLibrary(title, author, pages, isRead);
+
+    bookForm.reset();
+    bookDialog.close();
+});

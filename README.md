@@ -35,22 +35,27 @@
 
 ## 🧠 Under the Hood
 
-This project focuses on **Vanilla JavaScript** logic without frameworks. It implements the **Constructor Pattern** to manage book objects efficiently:
+This project focuses on **Vanilla JavaScript** logic without frameworks. It implements modern **ES6 Classes** to manage book objects efficiently:
 
-### Prototype Inheritance
-Instead of repeating functions for every object, I used prototypes to handle logic like toggling read status, optimizing memory usage:
+### Class-Based Architecture
+Refactored from plain constructors to modern syntax, the `Book` class encapsulates data and behavior in a clean, readable structure:
 
 ```javascript
-function Book(title, author, pages, isRead) {
-    this.id = crypto.randomUUID(); // Modern UUID generation
-    this.title = title;
-    // ...
-}
+class Book {
+    constructor(title, author, pages, isRead) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.isRead = isRead;
+        
+        this.id = crypto.randomUUID(); // Modern UUID generation
+    }
 
-// Shared method across all Book instances
-Book.prototype.toggleReadStatus = function() {
-    this.isRead = !this.isRead;
-};
+    // Method shared across all Book instances
+    toggleReadStatus() {
+        this.isRead = !this.isRead;
+    }
+}
 ```
 ---
 

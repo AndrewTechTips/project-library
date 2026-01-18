@@ -1,5 +1,7 @@
 const myLibrary = [];
 
+/* Old plain constructor, refactored with class
+
 function Book(title, author, pages, isRead) {
     this.id = crypto.randomUUID();
     this.title = title;
@@ -11,6 +13,23 @@ function Book(title, author, pages, isRead) {
 Book.prototype.toggleReadStatus = function() {
     this.isRead = !this.isRead;
 };
+
+*/
+
+class Book {
+    constructor(title, author, pages, isRead) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.isRead = isRead;
+
+        this.id = crypto.randomUUID();
+    }
+
+    toggleReadStatus() {
+        this.isRead = !this.isRead;
+    }
+}
 
 const libraryContainer = document.getElementById("libraryContainer");
 const emptyState = document.getElementById("emptyState");
